@@ -9,5 +9,5 @@ const app = express();
 
 app.use(express.json());
 app.use(express.static('public'));
-app.use(server);
+app.use('/',server);
 app.listen(process.env.PORT || 2000);
