@@ -1,5 +1,4 @@
 const GOOGLE_MAP_API_KEY = process.env.GOOGLE_MAP_API_KEY;
-
 module.exports = ({content})=>{
     return `
     <!DOCTYPE html>
@@ -12,7 +11,7 @@ module.exports = ({content})=>{
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
         />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.css">
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB08OZiEWZcXYqmXU1NirnW8LXvwD2Dkro&libraries=places"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAP_API_KEY}&libraries=places"></script>
         
 
         
