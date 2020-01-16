@@ -2,7 +2,7 @@ const GOOGLE_MAP_API_KEY = process.env.GOOGLE_MAP_API_KEY;
 module.exports = ({content})=>{
     return `
     <!DOCTYPE html>
-<html>
+    <html>
     <head>
         <title>Weather Cast</title>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
@@ -34,8 +34,8 @@ module.exports = ({content})=>{
 
         <div class="field">
             <div class="control has-icons-left">
-              <form method = "POST" action="./locaInfo">
-              <input id="search" value="" class="input is-primary" type="text" placeholder="Show me the weather in...city, zip, or place">
+              <form method = "POST" action="/" id="searchForm">
+                    <input id="search" name="location" value="" class="input is-primary" type="text" placeholder="Show me the weather in...city, zip, or place">
               </form>
               <span class="icon is-small is-left">
                 <i class="fas fa-search"></i>
@@ -64,7 +64,7 @@ module.exports = ({content})=>{
                     </form>    
                 </div>
                 <div class="column has-background-info">
-                    <form action="./10days"
+                    <form action="/10days"
                         <button class="button is-info">10 Days</button>
                     </form>    
                 </div>
