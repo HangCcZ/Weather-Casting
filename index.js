@@ -10,6 +10,4 @@ const app = express();
 app.use(express.json());
 app.use(express.static('public'));
 app.use(server);
-app.listen(2000, ()=>{
-    console.log('Server Started');
-})
+app.listen(process.env.PORT || 2000);
