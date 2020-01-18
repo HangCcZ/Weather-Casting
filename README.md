@@ -3,3 +3,6 @@ This is a Node.Js Weather Casting application that use Google Map API to retreiv
 
 # Result
 Location Lookup with Google Map API<img src="/screenshots/google_loc.png"> 
+
+# Note
+I've restricted daily usage of Google Map API key, application might not work as expected during production.
