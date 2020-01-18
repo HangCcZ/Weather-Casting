@@ -1,8 +1,5 @@
 const GOOGLE_MAP_API_KEY = process.env.GOOGLE_MAP_API_KEY;
-module.exports = ({content,location})=>{
-    if(!location){
-      location = "";
-    }
+module.exports = ({content,location=""})=>{
     return `
     <!DOCTYPE html>
     <html>
@@ -14,7 +11,9 @@ module.exports = ({content,location})=>{
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
         />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.css">
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAP_API_KEY}&libraries=places"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/skycons/1396634940/skycons.min.js"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAP_API_KEY}&libraries=places">
+        </script>
         
 
         
@@ -37,7 +36,7 @@ module.exports = ({content,location})=>{
 
         <div class="field">
             <div class="control has-icons-left">
-              <form method = "POST" action="/" id="searchForm">
+              <form method = "POST" action="/24hours" id="searchForm">
                     <input id="search" name="location" value="${location}" class="input is-primary" type="text" placeholder="Show me the weather in...city, zip, or place">
               </form>
               <span class="icon is-small is-left">
@@ -52,23 +51,23 @@ module.exports = ({content,location})=>{
             <!--Date Section-->
             <div class="columns is-desktop has-text-centered">
                 <div class="column has-background-info">
-                    <form action="/24hours">
-                      <button class="button is-info">24 Hours</button>
+                    <form action="/24hours" action="POST">
+                      <button class="button is-info" name="location" value="${location}" >24 Hours</button>
                     </form>
                 </div>
                 <div class="column has-background-info">
-                    <form action="/weekend">
-                        <button class="button is-info">Weekend</button>
+                    <form action="/weekend" action="POST">
+                        <button class="button is-info" name="location" value="${location}" >Weekend</button>
                     </form>
                 </div>
                 <div class="column has-background-info">
-                    <form action="/7days">
-                        <button class="button is-info">7 Days</button>
+                    <form action="/7days" action="POST">
+                        <button class="button is-info" name="location" value="${location}" >7 Days</button>
                     </form>    
                 </div>
                 <div class="column has-background-info">
-                    <form action="/10days"
-                        <button class="button is-info">10 Days</button>
+                    <form action="/10days" action="POST">
+                        <button class="button is-info" name="location" value="${location}" >10 Days</button>
                     </form>    
                 </div>
             </div>
@@ -76,6 +75,7 @@ module.exports = ({content,location})=>{
             
     </body>
     <script type="text/javascript" src="search.js"></script>
+    <script type="text/javascript" src="selections.js"></script>
 </html>
     `
 }
