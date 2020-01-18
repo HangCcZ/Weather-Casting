@@ -13,26 +13,10 @@ searchBox.addListener('places_changed', async () => {
 
     let location = searchElement.value;
     // set location value to latitude and longitude, append location for display purpose
-    searchElement.value = `${latitude}.${longitude},${location}`
-    // submit form
+    searchElement.value = `${latitude}/${longitude}/${location}`
+    // trigger form submition when user selection a location from drop down
     searchForm.submit();
     
-    // fetch('/weather',{
-    //     method:'POST',
-    //     headers:{
-    //         'Content-Type':'application/json',
-    //         'Accept': 'application/json'
-    //     },
-    //     body: JSON.stringify({
-    //         latitude,longitude
-    //     })
-    // })
-    // .then(res=>{
-    //     console.log(res);
-    // })
-    // .catch(()=>{
-    //     console.log("error in fetch");
-    // })
 }
 );
 

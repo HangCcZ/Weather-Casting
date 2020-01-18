@@ -1,9 +1,14 @@
 const DARKSKY_API_KEY  = process.env.DARKSKY_API_KEY;
-const express = require('express');
-const router = express.Router()
-const axios = require('axios');
+
 const layout = require('../views/layout')
 const weatherInfo = require('../views/weatherInfo')
+
+const express = require('express');
+const axios = require('axios');
+
+
+const router = express.Router()
+
 
 // need to add body-parser
 router.post('/weather',async (req,res) =>{
@@ -22,11 +27,26 @@ router.post('/weather',async (req,res) =>{
 });
 
 router.get('/',(req,res)=>{
-    res.send(layout({content:"test"}));
+    res.send(layout({content:""}));
 })
 
-router.post('/',(req,res)=>{
-    res.send("Good");
+router.post('/',async (req,res)=>{
+    let geoLocation = req.body.location.split("/");
+    let latitude = geoLocation[0];
+    let longitude = geoLocation[1];
+    let location = geoLocation[2];
+
+    const url = `https://api.darksky.net/forecast/${DARKSKY_API_KEY}/${latitude},${longitude}?
+        units=auto`;
+    let response;
+    try{
+        response = await axios.get(url);
+    }catch(err){
+        console.log(`Something is wrong in respond: ${err}`);
+    }
+    const hourlyData = response.data.hourly.data;
+
+    res.send(weatherInfo({hourlyData,location}));
 })
 
 

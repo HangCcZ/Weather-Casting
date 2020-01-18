@@ -1,5 +1,8 @@
 const GOOGLE_MAP_API_KEY = process.env.GOOGLE_MAP_API_KEY;
-module.exports = ({content})=>{
+module.exports = ({content,location})=>{
+    if(!location){
+      location = "";
+    }
     return `
     <!DOCTYPE html>
     <html>
@@ -35,7 +38,7 @@ module.exports = ({content})=>{
         <div class="field">
             <div class="control has-icons-left">
               <form method = "POST" action="/" id="searchForm">
-                    <input id="search" name="location" value="" class="input is-primary" type="text" placeholder="Show me the weather in...city, zip, or place">
+                    <input id="search" name="location" value="${location}" class="input is-primary" type="text" placeholder="Show me the weather in...city, zip, or place">
               </form>
               <span class="icon is-small is-left">
                 <i class="fas fa-search"></i>
