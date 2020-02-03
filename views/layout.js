@@ -47,7 +47,7 @@ module.exports = ({content,location=""})=>{
         <!--Date Section-->
         <div class="columns is-desktop has-text-centered">
             <div class="column has-background-info">
-                <form action="/24hours" action="POST">
+                <form action="/24hours" method="POST">
                   <button class="button is-info" name="location" value="${location}" >24 Hours</button>
                 </form>
             </div>
