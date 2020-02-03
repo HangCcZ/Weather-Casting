@@ -1,5 +1,5 @@
 const GOOGLE_MAP_API_KEY = process.env.GOOGLE_MAP_API_KEY;
-module.exports = ({content,location=""})=>{
+module.exports = ({content,geoLocation=[]})=>{
     return `
     <!DOCTYPE html>
     <html>
@@ -36,7 +36,7 @@ module.exports = ({content,location=""})=>{
         <div class="field">
             <div class="control has-icons-left">
               <form method = "POST" action="/24hours" id="searchForm">
-                    <input id="search" name="location" value="${location}" class="input is-primary" type="text" placeholder="Show me the weather in...city, zip, or place">
+                    <input id="search" name="location" value="${geoLocation.length==0 ? "" : geoLocation[2]}" class="input is-primary" type="text" placeholder="Show me the weather in...city, zip, or place">
               </form>
               <span class="icon is-small is-left">
                 <i class="fas fa-search"></i>
@@ -48,22 +48,22 @@ module.exports = ({content,location=""})=>{
         <div class="columns is-desktop has-text-centered">
             <div class="column has-background-info">
                 <form action="/24hours" method="POST">
-                  <button class="button is-info" name="location" value="${location}" >24 Hours</button>
+                  <button class="button is-info" name="location" value="${geoLocation[0]}/${geoLocation[1]}/${geoLocation[2]}" >24 Hours</button>
                 </form>
             </div>
             <div class="column has-background-info">
-                <form action="/weekend" action="POST">
-                    <button class="button is-info" name="location" value="${location}" >Weekend</button>
+                <form action="/weekend" method="POST">
+                    <button class="button is-info" name="location" value="${geoLocation[0]}/${geoLocation[1]}/${geoLocation[2]}" >Weekend</button>
                 </form>
             </div>
             <div class="column has-background-info">
-                <form action="/7days" action="POST">
-                    <button class="button is-info" name="location" value="${location}" >7 Days</button>
+                <form action="/7days" method="POST">
+                    <button class="button is-info" name="location" value="${geoLocation[0]}/${geoLocation[1]}/${geoLocation[2]}" >7 Days</button>
                 </form>    
             </div>
             <div class="column has-background-info">
-                <form action="/10days" action="POST">
-                    <button class="button is-info" name="location" value="${location}" >10 Days</button>
+                <form action="/10days" method="POST">
+                    <button class="button is-info" name="location" value="${geoLocation[0]}/${geoLocation[1]}/${geoLocation[2]}" >10 Days</button>
                 </form>    
             </div>
         </div>

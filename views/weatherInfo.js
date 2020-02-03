@@ -1,7 +1,7 @@
 const layout = require('./layout');
 const hourConvert = require('./hourConvert');
 
-module.exports = ({hourlyData,location})=>{
+module.exports = ({hourlyData,geoLocation})=>{
     // render each hour of weather data
     const renderedData = hourlyData.map(
         weather =>{
@@ -40,6 +40,6 @@ module.exports = ({hourlyData,location})=>{
             </tbody>
         </table>
         
-        `,location
+        `,geoLocation
     });
 }

@@ -11,14 +11,14 @@ const router = express.Router()
 
 
 router.get('/',(req,res)=>{
-    res.send(layout({content:""}));
+    res.send(layout({content:"",geoLocation:[]}));
 })
 
 router.post('/24hours',async (req,res)=>{
     let geoLocation = req.body.location.split("/");
     let latitude = geoLocation[0];
     let longitude = geoLocation[1];
-    let location = geoLocation[2];
+    //let location = geoLocation[2];
 
     const url = `https://api.darksky.net/forecast/${DARKSKY_API_KEY}/${latitude},${longitude}?
         units=auto`;
@@ -28,8 +28,9 @@ router.post('/24hours',async (req,res)=>{
     }catch(err){
         console.log(`Something is wrong in respond: ${err}`);
     }
+    
     const hourlyData = response.data.hourly.data;
-    res.send(weatherInfo({hourlyData,location}));
+    res.send(weatherInfo({hourlyData,geoLocation}));
 })
 
 
