@@ -1,6 +1,5 @@
 const layout = require('./layout');
 const hourConvert = require('./hourConvert');
-const Skycons = require('skycons');
 
 module.exports = ({hourlyData,location})=>{
     // render each hour of weather data
