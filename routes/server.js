@@ -29,7 +29,6 @@ router.post('/24hours',async (req,res)=>{
         console.log(`Something is wrong in respond: ${err}`);
     }
     const hourlyData = response.data.hourly.data;
-    console.log(hourlyData);
     res.send(weatherInfo({hourlyData,location}));
 })
 

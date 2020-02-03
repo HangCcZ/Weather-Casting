@@ -10,12 +10,12 @@ searchBox.addListener('places_changed', async () => {
     const latitude = place.geometry.location.lat();
     const longitude= place.geometry.location.lng();
     
-
     let location = searchElement.value;
     // set location value to latitude and longitude, append location for display purpose
     searchElement.value = `${latitude}/${longitude}/${location}`
     // trigger form submition when user selection a location from drop down
     searchForm.submit();
+
     
 }
 );

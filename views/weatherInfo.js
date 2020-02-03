@@ -6,12 +6,9 @@ module.exports = ({hourlyData,location})=>{
     // render each hour of weather data
     const renderedData = hourlyData.map(
         weather =>{
-            const timeDate = new Date(weather.time*1000);
-            const timeDateInHour = hourConvert(timeDate.getHours());
-            
             return `
             <tr>
-                <td>${timeDateInHour}</td>
+                <td>${hourConvert(weather.time)}</td>
                 <td><img src="/icons/${weather.icon}.svg" height="30" width="40" /></td>
                 <td>${weather.summary}</td>
                 <td>${weather.temperature}</td>

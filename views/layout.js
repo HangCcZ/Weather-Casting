@@ -7,11 +7,10 @@ module.exports = ({content,location=""})=>{
         <title>Weather Cast</title>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
         <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
         />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.css">
-        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/skycons/1396634940/skycons.min.js"></script>
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAP_API_KEY}&libraries=places">
         </script>
         
@@ -43,39 +42,39 @@ module.exports = ({content,location=""})=>{
                 <i class="fas fa-search"></i>
               </span>
             </div>
-
-        
-
         </div>
 
-            <!--Date Section-->
-            <div class="columns is-desktop has-text-centered">
-                <div class="column has-background-info">
-                    <form action="/24hours" action="POST">
-                      <button class="button is-info" name="location" value="${location}" >24 Hours</button>
-                    </form>
-                </div>
-                <div class="column has-background-info">
-                    <form action="/weekend" action="POST">
-                        <button class="button is-info" name="location" value="${location}" >Weekend</button>
-                    </form>
-                </div>
-                <div class="column has-background-info">
-                    <form action="/7days" action="POST">
-                        <button class="button is-info" name="location" value="${location}" >7 Days</button>
-                    </form>    
-                </div>
-                <div class="column has-background-info">
-                    <form action="/10days" action="POST">
-                        <button class="button is-info" name="location" value="${location}" >10 Days</button>
-                    </form>    
-                </div>
+        <!--Date Section-->
+        <div class="columns is-desktop has-text-centered">
+            <div class="column has-background-info">
+                <form action="/24hours" action="POST">
+                  <button class="button is-info" name="location" value="${location}" >24 Hours</button>
+                </form>
             </div>
-            ${content}
-            
-    </body>
+            <div class="column has-background-info">
+                <form action="/weekend" action="POST">
+                    <button class="button is-info" name="location" value="${location}" >Weekend</button>
+                </form>
+            </div>
+            <div class="column has-background-info">
+                <form action="/7days" action="POST">
+                    <button class="button is-info" name="location" value="${location}" >7 Days</button>
+                </form>    
+            </div>
+            <div class="column has-background-info">
+                <form action="/10days" action="POST">
+                    <button class="button is-info" name="location" value="${location}" >10 Days</button>
+                </form>    
+            </div>
+        </div>
+        ${content}
+        
+</body>
     <script type="text/javascript" src="search.js"></script>
     <script type="text/javascript" src="selections.js"></script>
 </html>
-    `
+`
+            
+            
+
 }
