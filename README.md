@@ -1,5 +1,5 @@
 # Weather Caster -  Work in process
-This is a Node.Js Weather Casting application that use Google Map API to retreive geolocation and Dark Sky API to obtain corresponding weather infomation. The project has been deployed on Heroku https://weathercaster2020.herokuapp.com/
+This is a Node.Js Weather Casting application that use Google Map API to retreive geolocation and Dark Sky API to obtain corresponding weather infomation. This application is able to display hourly weather infomation up to 48 hours. The project has been deployed on Heroku https://weathercaster2020.herokuapp.com/
 
 # Note
 I've restricted daily usage of Google Map API key, application might not work as expected during production. Refresh the website page might help.
