@@ -26,6 +26,10 @@ module.exports = ({content,geoLocation=[]})=>{
                   <span class="icon">
                     <i class="fas fa-sun"></i>
                   </span>
+
+                  <button class="button ">&#8457;</button>
+                  <button class="button ">&#8451;</button>
+                  
                 </h1>
               </div>
             </div>
