@@ -52,20 +52,11 @@ module.exports = ({content,geoLocation=[]})=>{
                 </form>
             </div>
             <div class="column has-background-info">
-                <form action="/weekend" method="POST">
-                    <button class="button is-info" name="location" value="${geoLocation[0]}/${geoLocation[1]}/${geoLocation[2]}" >Weekend</button>
-                </form>
-            </div>
-            <div class="column has-background-info">
                 <form action="/7days" method="POST">
                     <button class="button is-info" name="location" value="${geoLocation[0]}/${geoLocation[1]}/${geoLocation[2]}" >7 Days</button>
-                </form>    
+                </form>
             </div>
-            <div class="column has-background-info">
-                <form action="/10days" method="POST">
-                    <button class="button is-info" name="location" value="${geoLocation[0]}/${geoLocation[1]}/${geoLocation[2]}" >10 Days</button>
-                </form>    
-            </div>
+        
         </div>
         ${content}
         

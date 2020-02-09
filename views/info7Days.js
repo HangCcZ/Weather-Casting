@@ -1,17 +1,17 @@
 const layout = require('./layout');
-const hourConvert = require('../helper/hourConvert');
+const dayConvert = require('../helper/dayConvert.js');
 
-module.exports = ({hourlyData,geoLocation})=>{
+module.exports = ({dailyData ,geoLocation})=>{
     // render each hour of weather data
-    const renderedData = hourlyData.map(
+    const renderedData = dailyData.map(
         weather =>{
             return `
             <tr>
-                <td>${hourConvert(weather.time)}</td>
+                <td>${dayConvert(weather.time)}</td>
                 <td><img src="/icons/${weather.icon}.svg" height="30" width="40" /></td>
                 <td>${weather.summary}</td>
-                <td>${Math.round(weather.temperature)}&#8457;</td>
-                <td>${Math.round(weather.apparentTemperature)}&#8457;</td>
+                <td>${Math.round(weather.temperatureHigh)}/${Math.round(weather.temperatureLow)}&#8457;</td>
+                <td>${Math.round(weather.apparentTemperatureHigh)}/${Math.round(weather.apparentTemperatureLow)}&#8457;</td>
                 <td>${Math.round(weather.precipProbability*100)}%</td>
                 <td>${Math.round(weather.humidity*100)}%</td>
                 <td>${(weather.windSpeed).toFixed(1)}mph</td>

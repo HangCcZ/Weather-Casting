@@ -7,4 +7,3 @@ I've restricted daily usage of Google Map API key, application might not work as
 # Result
 Location Lookup with Google Map API<img src="/screenshots/google_loc.png"> 
 
-
